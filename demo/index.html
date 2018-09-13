@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>d2l-breadcrumbs-list demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../d2l-breadcrumbs-list.html">
+	<link rel="import" href="../d2l-breadcrumbs-item.html">
+
+	<custom-style>
+		<style is="custom-style" include="demo-pages-shared-styles">
+		</style>
+	</custom-style>
+</head>
+
+<body>
+	<div class="vertical-section-container centered">
+		<h3>Basic d2l-breadcrumbs-list demo</h3>
+		<demo-snippet>
+			<template>
+				<d2l-breadcrumbs-list>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 1"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 2"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 3"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 4"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 5"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Basic Item 6"></d2l-breadcrumbs-item>
+				</d2l-breadcrumbs-list>
+			</template>
+		</demo-snippet>
+	</div>
+	<div class="vertical-section-container centered">
+		<h3>Compact d2l-breadcrumbs-list demo</h3>
+		<demo-snippet>
+			<template>
+				<d2l-breadcrumbs-list compact>
+					<d2l-breadcrumbs-item href="#" text="Compact Item 1"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Compact Item 2"></d2l-breadcrumbs-item>
+					<d2l-breadcrumbs-item href="#" text="Compact Item 3"></d2l-breadcrumbs-item>
+				</d2l-breadcrumbs-list>
+			</template>
+		</demo-snippet>
+	</div>
+</body>
+
+</html>

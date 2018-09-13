@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+	<title>d2l-breadcrumbs-item test</title>
+	<script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+	<script src="../../web-component-tester/browser.js"></script>
+	<link rel="import" href="../d2l-breadcrumbs-item.html">
+</head>
+
+<body>
+	<test-fixture id="basic">
+		<template>
+			<d2l-breadcrumbs-item href="#" text="basic-item"></d2l-breadcrumbs-item>
+		</template>
+	</test-fixture>
+	<test-fixture id="compact">
+		<template>
+			<d2l-breadcrumbs-item href="#" text="compact-item" compact></d2l-breadcrumbs-item>
+		</template>
+	</test-fixture>
+	<script>
+		describe('<d2l-breadcrumbs-item>', () => {
+			let item;
+			let itemShadowRoot;
+			let text;
+			let chevronIcons;
+
+			function setItemVariables() {
+				itemShadowRoot = item.shadowRoot;
+				text = itemShadowRoot.querySelector('d2l-link').innerHTML;
+				chevronIcons = itemShadowRoot.querySelectorAll('d2l-icon:not([hidden])');
+			}
+
+			describe('basic', () => {
+				beforeEach(() => {
+					item = fixture('basic');
+					setItemVariables();
+				});
+
+				it('should pass text parameter correctly', () => {
+					expect(text).to.equal('basic-item');
+				});
+
+				it('should show right chevron icon', () => {
+					expect(chevronIcons.length).to.equal(1);
+					expect(chevronIcons[0].icon).to.equal('d2l-tier1:chevron-right');
+				});
+			});
+
+			describe('compact', () => {
+				before(() => {
+					item = fixture('compact');
+					setItemVariables();
+				});
+
+				it('should pass text parameter correctly', () => {
+					expect(text).to.equal('compact-item');
+				});
+
+				it('should show left chevron icon', () => {
+					expect(chevronIcons.length).to.equal(1);
+					expect(chevronIcons[0].icon).to.equal('d2l-tier1:chevron-left');
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
