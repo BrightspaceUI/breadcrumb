@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>d2l-breadcrumb-list demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../d2l-breadcrumb-list.html">
+	<link rel="import" href="../d2l-breadcrumb-item.html">
+	<link rel="import" href="../../d2l-typography/d2l-typography.html">
+
+	<custom-style>
+		<style is="custom-style" include="demo-pages-shared-styles">
+		</style>
+	</custom-style>
+	<custom-style include="d2l-typography">
+		<style is="custom-style" include="d2l-typography"></style>
+	</custom-style>
+</head>
+
+<body>
+	<div class="vertical-section-container centered">
+		<h3>Basic d2l-breadcrumb-list demo</h3>
+		<demo-snippet>
+			<template>
+				<d2l-breadcrumb-list>
+					<d2l-breadcrumb-item href="#" text="Basic Item 1"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Basic Item 2"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Basic Item 3"></d2l-breadcrumb-item>
+				</d2l-breadcrumb-list>
+			</template>
+		</demo-snippet>
+	</div>
+	<div class="vertical-section-container centered">
+		<h3>Basic Overflow d2l-breadcrumb-list demo</h3>
+		<demo-snippet>
+			<template>
+				<d2l-breadcrumb-list style="max-width: 200px;">
+					<d2l-breadcrumb-item href="#" text="Basic Item 1"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Basic Item 2"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Basic Item 3"></d2l-breadcrumb-item>
+				</d2l-breadcrumb-list>
+			</template>
+		</demo-snippet>
+	</div>
+	<div class="vertical-section-container centered">
+		<h3>Compact d2l-breadcrumb-list demo</h3>
+		<demo-snippet>
+			<template>
+				<d2l-breadcrumb-list compact>
+					<d2l-breadcrumb-item href="#" text="Compact Item 1"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Compact Item 2"></d2l-breadcrumb-item>
+					<d2l-breadcrumb-item href="#" text="Compact Item 3"></d2l-breadcrumb-item>
+				</d2l-breadcrumb-list>
+			</template>
+		</demo-snippet>
+	</div>
+	<script>
+		document.body.classList.add('d2l-typography');
+	</script>
+</body>
+
+</html>

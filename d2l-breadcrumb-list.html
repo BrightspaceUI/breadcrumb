@@ -1,0 +1,75 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../d2l-icons/d2l-icon.html">
+<link rel="import" href="../d2l-icons/tier1-icons.html">
+
+<dom-module id="d2l-breadcrumb-list">
+	<template>
+		<style>
+			:host {
+				position: relative;
+				display: block;
+			}
+			:host:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 10px;
+				pointer-events: none;
+				left: 0;
+				background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+			}
+			.wrapper {
+				position: relative;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+		</style>
+		<div class="wrapper">
+			<slot></slot>
+		</div>
+	</template>
+
+	<script>
+		/**
+		 * `d2l-breadcrumb-list`
+		 * Polymer-based web component for D2L breadcrumb list
+		 *
+		 * @customElement
+		 * @polymer
+		 * @demo demo/index.html
+		 */
+		class D2lBreadcrumbList extends Polymer.Element {
+			static get is() { return 'd2l-breadcrumb-list'; }
+			static get properties() {
+				return {
+					/**
+					* Whether in compact mode
+					*/
+					compact: {
+						type: Boolean,
+						value: false,
+						observer: '_observeCompact'
+					}
+				};
+			}
+
+			ready() {
+				this._ensureAttribute('role', 'list');
+				super.ready();
+			}
+			_observeCompact() {
+				var children = this.querySelectorAll('d2l-breadcrumb-item');
+				var self = this;
+				children.forEach(function(child, index, array) {
+					if (self.compact && index < array.length - 1) {
+						child.hidden = true;
+					}
+					child.compact = self.compact;
+				});
+			}
+		}
+
+		window.customElements.define(D2lBreadcrumbList.is, D2lBreadcrumbList);
+	</script>
+</dom-module>
