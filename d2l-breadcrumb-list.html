@@ -3,20 +3,20 @@
 <link rel="import" href="../d2l-icons/tier1-icons.html">
 
 <dom-module id="d2l-breadcrumb-list">
-	<template>
+	<template strip-whitespace>
 		<style>
 			:host {
 				position: relative;
 				display: block;
 			}
-			:host:after {
+			:host::after {
 				content: '';
 				position: absolute;
 				top: 0;
 				bottom: 0;
 				width: 10px;
 				pointer-events: none;
-				left: 0;
+				right:0;
 				background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 			}
 			.wrapper {
