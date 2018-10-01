@@ -1,5 +1,5 @@
 {
-  "name": "d2l-breadcrumb-list",
+  "name": "d2l-breadcrumbs",
   "description": "Polymer-based web component for D2L breadcrumbs and related components",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BrightspaceUI/breadcrumb.git"
+    "url": "https://github.com/BrightspaceUI/breadcrumbs.git"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",

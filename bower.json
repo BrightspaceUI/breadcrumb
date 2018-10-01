@@ -1,7 +1,7 @@
 {
-  "name": "d2l-breadcrumb",
+  "name": "d2l-breadcrumbs",
   "description": "Polymer-based web component for D2L breadcrumbs and related components",
-  "main": "d2l-breadcrumb-list.html",
+  "main": "d2l-breadcrumbs.html",
   "license": "Apache-2.0",
   "ignore": [
     "demo",
@@ -19,7 +19,7 @@
     "d2l-colors": "^3.1.2",
     "d2l-icons": "^5.0.2",
     "d2l-link": "^4.0.0",
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "1.9 - 2"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",

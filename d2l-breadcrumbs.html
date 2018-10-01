@@ -1,0 +1,93 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../d2l-polymer-behaviors/d2l-dom.html">
+<link rel="import" href="../d2l-icons/d2l-icon.html">
+<link rel="import" href="../d2l-icons/tier1-icons.html">
+
+<dom-module id="d2l-breadcrumbs">
+	<template strip-whitespace>
+		<style>
+			:host {
+				--d2l-breadcrumbs-background-color: rgb(255, 255, 255);
+				position: relative;
+				display: block;
+			}
+
+			:host::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 10px;
+				pointer-events: none;
+				background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+			}
+			:host-context([dir="rtl"])::after {
+				left: 0;
+				right: auto;
+				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+			}
+			:host(:dir(rtl))::after {
+				left: 0;
+				right: auto;
+				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+			}
+
+			.wrapper {
+				position: relative;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			div.compact ::slotted(d2l-breadcrumb:not(:last-child)) {
+				display: none;
+			}
+		</style>
+		<div class$="[[_getConditionalClasses(compact)]]">
+			<slot></slot>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'd2l-breadcrumbs',
+			properties: {
+
+				/**
+				* Whether in `1 level` mode
+				*/
+				compact: {
+					type: Boolean,
+					value: false
+				}
+			},
+			ready: function() {
+				this._ensureAttribute('role', 'list');
+			},
+			attached: function() {
+				Polymer.RenderStatus.afterNextRender(this, function() {
+					var bgColor = this._getComputedBackgroundColor();
+					if (bgColor && bgColor !== 'rgb(255, 255, 255)' && bgColor !== 'rgba(255, 255, 255, 1)') {
+						this.updateStyles({'--d2l-breadcrumbs-background-color': bgColor});
+					}
+				});
+			},
+			_getConditionalClasses: function(compact) {
+				var classes = ['wrapper'];
+				if (compact) { classes.push('compact'); }
+				return classes.join(' ');
+			},
+			_getComputedBackgroundColor: function() {
+				var bgColor = null;
+				D2L.Dom.findComposedAncestor(this, function(node) {
+					if (!node || node.nodeType !== 1) return false;
+					var nodeColor = getComputedStyle(node, null)['backgroundColor'];
+					if (nodeColor === 'rgba(0, 0, 0, 0)' || nodeColor === 'transparent') return false;
+					bgColor = nodeColor;
+					return true;
+				});
+				return bgColor;
+			}
+		});
+	</script>
+</dom-module>

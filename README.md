@@ -1,5 +1,5 @@
-# d2l-breadcrumb
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/BrightspaceUI/breadcrumb)
+# d2l-breadcrumbs
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/BrightspaceUI/breadcrumbs)
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
@@ -8,14 +8,14 @@ Breadcrumbs help users understand where they are within the LMS, and provide use
 
 ## Installation
 
-`d2l-breadcrumb` can be installed from [Bower][bower-url]:
+`d2l-breadcrumbs` can be installed from [Bower][bower-url]:
 ```shell
-bower install d2l-breadcrumb
+bower install d2l-breadcrumbs
 ```
 
 ## Usage
 
-Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loader (for browsers who don't natively support web components), then import `d2l-breadcrumb-list.html`:
+Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loader (for browsers who don't natively support web components), then import `d2l-breadcrumbs.html`:
 
 ```html
 <head>
@@ -25,32 +25,32 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loa
 
 ### Components
 
-#### `d2l-breadcrumb-item`
+#### `d2l-breadcrumb`
 
- `d2l-breadcrumb-item` represents a breadcrumb link with the chevron icon. Depending on the configuration we are either showing left or right chevron icon.
+ `d2l-breadcrumb` represents a breadcrumb link with the chevron icon. Depending on the configuration we are either showing left or right chevron icon.
 
 ```html
-<d2l-breadcrumb-item href="#" text="Breadcrumb item"></d2l-breadcrumb-item>
+<d2l-breadcrumb href="#" text="Breadcrumb item"></d2l-breadcrumb>
 ```
 
-#### `d2l-breadcrumb-list`
+#### `d2l-breadcrumbs`
 
-`d2l-breadcrumb-list` wraps a list of items, and provides spacing between the items.
+`d2l-breadcrumbs` wraps a list of items, and provides spacing between the items.
 
 ```html
-<d2l-breadcrumb-list>
-	<d2l-breadcrumb-item href="#" text="Breadcrumb item 1"></d2l-breadcrumb-item>
-	<d2l-breadcrumb-item href="#" text="Breadcrumb item 2"></d2l-breadcrumb-item>
+<d2l-breadcrumbs>
+	<d2l-breadcrumb href="#" text="Breadcrumb item 1"></d2l-breadcrumb>
+	<d2l-breadcrumb href="#" text="Breadcrumb item 2"></d2l-breadcrumb>
 	...
-</d2l-multi-select-list>
+</d2l-breadcrumbs>
 ```
 
 ```html
-<d2l-breadcrumb-list compact>
-	<d2l-breadcrumb-item href="#" text="Breadcrumb item 1"></d2l-breadcrumb-item>
-	<d2l-breadcrumb-item href="#" text="Breadcrumb item 2"></d2l-breadcrumb-item>
+<d2l-breadcrumbs compact>
+	<d2l-breadcrumb href="#" text="Breadcrumb item 1"></d2l-breadcrumb>
+	<d2l-breadcrumb href="#" text="Breadcrumb item 2"></d2l-breadcrumb>
 	...
-</d2l-multi-select-list>
+</d2l-breadcrumbs>
 ```
 
 ## Developing, Testing and Contributing
@@ -87,8 +87,8 @@ To lint AND run local unit tests:
 npm test
 ```
 
-[bower-url]: http://bower.io/search/?q=d2l-breadcrumb
-[bower-image]: https://badge.fury.io/bo/d2l-breadcrumb.svg
-[ci-url]: https://travis-ci.org/BrightspaceUI/breadcrumb
-[ci-image]: https://travis-ci.org/BrightspaceUI/breadcrumb.svg?branch=master
-[design.d2l-url]: http://design.d2l/components/tags/
+[bower-url]: http://bower.io/search/?q=d2l-breadcrumbs
+[bower-image]: https://badge.fury.io/bo/d2l-breadcrumbs.svg
+[ci-url]: https://travis-ci.org/BrightspaceUI/breadcrumbs
+[ci-image]: https://travis-ci.org/BrightspaceUI/breadcrumbs.svg?branch=master
+[design.d2l-url]: http://design.d2l/components/breadcrumbs/

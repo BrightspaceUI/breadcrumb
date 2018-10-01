@@ -4,25 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-	<title>d2l-breadcrumb-item test</title>
-	<script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+	<title>d2l-breadcrumb test</title>
+	<script src="../../webcomponentsjs/webcomponents-light.js"></script>
 	<script src="../../web-component-tester/browser.js"></script>
-	<link rel="import" href="../d2l-breadcrumb-item.html">
+	<link rel="import" href="../d2l-breadcrumb.html">
 </head>
 
 <body>
 	<test-fixture id="basic">
 		<template>
-			<d2l-breadcrumb-item href="#" text="basic-item"></d2l-breadcrumb-item>
-		</template>
-	</test-fixture>
-	<test-fixture id="compact">
-		<template>
-			<d2l-breadcrumb-item href="#" text="compact-item" compact></d2l-breadcrumb-item>
+			<d2l-breadcrumb href="#" text="basic-item"></d2l-breadcrumb>
 		</template>
 	</test-fixture>
 	<script>
-		describe('<d2l-breadcrumb-item>', () => {
+		describe('<d2l-breadcrumb>', () => {
 			let item;
 			let itemShadowRoot;
 			let text;
@@ -47,22 +42,6 @@
 				it('should show right chevron icon', () => {
 					expect(chevronIcons.length).to.equal(1);
 					expect(chevronIcons[0].icon).to.equal('d2l-tier1:chevron-right');
-				});
-			});
-
-			describe('compact', () => {
-				before(() => {
-					item = fixture('compact');
-					setItemVariables();
-				});
-
-				it('should pass text parameter correctly', () => {
-					expect(text).to.equal('compact-item');
-				});
-
-				it('should show left chevron icon', () => {
-					expect(chevronIcons.length).to.equal(1);
-					expect(chevronIcons[0].icon).to.equal('d2l-tier1:chevron-left');
 				});
 			});
 		});
