@@ -9,18 +9,29 @@
 	<template strip-whitespace>
 		<style>
 			:host {
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
 				display: inline-flex;
+			}
+
+			div.d2l-breadcrumb-wrapper {
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
 			}
 
-			div.wrapper {
-				align-items: center;
-			}
-
-			div.wrapper.compact {
+			div.d2l-breadcrumb-wrapper.compact {
 				display: -webkit-flex;
-				-webkit-flex-direction: row-reverse;
-				flex-direction: row-reverse;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: reverse;
+    			-ms-flex-direction: row-reverse;
+        		flex-direction: row-reverse;
 			}
 
 			d2l-icon {
@@ -28,7 +39,7 @@
 			}
 
 		</style>
-		<div class$="[[_getConditionalClasses(_compact)]]">
+		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
 			<d2l-icon icon="[[_toggle(_compact, _compactIcon, _regularIcon)]]"></d2l-icon>
 		</div>
@@ -68,10 +79,8 @@
 					value: 'd2l-tier1:chevron-right'
 				}
 			},
-			ready: function() {
-				this._ensureAttribute('role', 'listitem');
-			},
 			attached: function() {
+				this._ensureAttribute('role', 'listitem');
 				this._compact = this._getCompactProperty();
 				Polymer.RenderStatus.afterNextRender(this, function() {
 					this._compact = this._getCompactProperty();
@@ -79,7 +88,7 @@
 			},
 			_toggle: function(cond, t, f) { return cond ? t : f; },
 			_getConditionalClasses: function(compact) {
-				var classes = ['wrapper'];
+				var classes = ['d2l-breadcrumb-wrapper'];
 				if (compact) { classes.push('compact'); }
 				return classes.join(' ');
 			},

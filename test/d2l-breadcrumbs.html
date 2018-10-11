@@ -7,7 +7,6 @@
 	<title>d2l-breadcrumbs test</title>
 	<script src="../../webcomponentsjs/webcomponents-light.js"></script>
 	<script src="../../web-component-tester/browser.js"></script>
-	<link rel="import" href="../d2l-breadcrumb.html">
 	<link rel="import" href="../d2l-breadcrumbs.html">
 </head>
 
@@ -52,7 +51,7 @@
 				before(() => {
 					list = fixture('basic');
 					const itemShadowRoot = list.shadowRoot;
-					wrapper = itemShadowRoot.querySelector('div.wrapper');
+					wrapper = itemShadowRoot.querySelector('div.d2l-breadcrumbs-wrapper');
 					items = list.querySelectorAll('d2l-breadcrumb:not([hidden])');
 				});
 
@@ -66,7 +65,7 @@
 					list = fixture('basic overflow');
 					const itemShadowRoot = list.shadowRoot;
 					items = list.querySelectorAll('d2l-breadcrumb:not([hidden])');
-					wrapper = itemShadowRoot.querySelector('div.wrapper');
+					wrapper = itemShadowRoot.querySelector('div.d2l-breadcrumbs-wrapper');
 				});
 
 				it('should hide overflown elements', () => {

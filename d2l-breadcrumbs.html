@@ -1,42 +1,51 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../d2l-polymer-behaviors/d2l-dom.html">
 <link rel="import" href="../d2l-icons/d2l-icon.html">
 <link rel="import" href="../d2l-icons/tier1-icons.html">
+<link rel="import" href="./d2l-breadcrumb.html">
 
 <dom-module id="d2l-breadcrumbs">
 	<template strip-whitespace>
 		<style>
 			:host {
-				--d2l-breadcrumbs-background-color: rgb(255, 255, 255);
-				position: relative;
+				--d2l-breadcrumbs-background-color: rgb(251, 252, 252);
 				display: block;
+				position: relative;
 			}
 
 			:host::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				width: 10px;
-				pointer-events: none;
+				background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(var(--d2l-breadcrumbs-background-color)));
+				background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				background: -o-linear-gradient(left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
 				background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				bottom: 0;
+				content: '';
+				pointer-events: none;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 15px;
 			}
 			:host-context([dir="rtl"])::after {
+				background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(var(--d2l-breadcrumbs-background-color)));
+				background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				background: -o-linear-gradient(right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
 				left: 0;
 				right: auto;
-				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
 			}
 			:host(:dir(rtl))::after {
+				background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(var(--d2l-breadcrumbs-background-color)));
+				background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				background: -o-linear-gradient(right, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
+				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
 				left: 0;
 				right: auto;
-				background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--d2l-breadcrumbs-background-color));
 			}
 
-			.wrapper {
+			.d2l-breadcrumbs-wrapper {
+				overflow: hidden;
 				position: relative;
 				white-space: nowrap;
-				overflow: hidden;
 			}
 
 			div.compact ::slotted(d2l-breadcrumb:not(:last-child)) {
@@ -61,32 +70,13 @@
 					value: false
 				}
 			},
-			ready: function() {
+			attached: function() {
 				this._ensureAttribute('role', 'list');
 			},
-			attached: function() {
-				Polymer.RenderStatus.afterNextRender(this, function() {
-					var bgColor = this._getComputedBackgroundColor();
-					if (bgColor && bgColor !== 'rgb(255, 255, 255)' && bgColor !== 'rgba(255, 255, 255, 1)') {
-						this.updateStyles({'--d2l-breadcrumbs-background-color': bgColor});
-					}
-				});
-			},
 			_getConditionalClasses: function(compact) {
-				var classes = ['wrapper'];
+				var classes = ['d2l-breadcrumbs-wrapper'];
 				if (compact) { classes.push('compact'); }
 				return classes.join(' ');
-			},
-			_getComputedBackgroundColor: function() {
-				var bgColor = null;
-				D2L.Dom.findComposedAncestor(this, function(node) {
-					if (!node || node.nodeType !== 1) return false;
-					var nodeColor = getComputedStyle(node, null)['backgroundColor'];
-					if (nodeColor === 'rgba(0, 0, 0, 0)' || nodeColor === 'transparent') return false;
-					bgColor = nodeColor;
-					return true;
-				});
-				return bgColor;
 			}
 		});
 	</script>

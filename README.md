@@ -25,14 +25,6 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loa
 
 ### Components
 
-#### `d2l-breadcrumb`
-
- `d2l-breadcrumb` represents a breadcrumb link with the chevron icon. Depending on the configuration we are either showing left or right chevron icon.
-
-```html
-<d2l-breadcrumb href="#" text="Breadcrumb item"></d2l-breadcrumb>
-```
-
 #### `d2l-breadcrumbs`
 
 `d2l-breadcrumbs` wraps a list of items, and provides spacing between the items.
