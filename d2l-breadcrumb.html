@@ -42,11 +42,18 @@
 				padding-left: 10px;
 				padding-right: 5px;
 			}
+			iron-icon:dir(rtl) {
+				padding-left: 5px;
+				padding-right: 10px;
+			}
 			div.d2l-breadcrumb-wrapper.compact iron-icon {
 				padding-right: 10px;
 				padding-left: 0;
 			}
-
+			div.d2l-breadcrumb-wrapper.compact iron-icon:dir(rtl) {
+				padding-right: 0px;
+				padding-left: 10px;
+			}
 		</style>
 		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
