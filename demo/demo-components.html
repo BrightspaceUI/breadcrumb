@@ -1,0 +1,47 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../d2l-breadcrumbs.html">
+
+<dom-module id="d2l-demo-templated-breadcrumbs">
+	<template>
+		<d2l-breadcrumbs>
+			<template items="{{breadcrumbs}}" is="dom-repeat">
+				<d2l-breadcrumb href$="{{item.href}}" text="{{item.text}}"></d2l-breadcrumb>
+			</template>
+		</d2l-breadcrumbs>
+	</template>
+	<script>
+		Polymer({
+			is: 'd2l-demo-templated-breadcrumbs',
+			attached: function() {
+				this.breadcrumbs = [
+					{href: '#', text: 'Tempated Item 1'},
+					{href: '#', text: 'Tempated Item 2'},
+					{href: '#', text: 'Tempated Item 3'},
+					{href: '#', text: 'Tempated Item 4'}
+				];
+			}
+		});
+	</script>
+</dom-module>
+
+<dom-module id="d2l-demo-templated-compact-breadcrumbs">
+	<template>
+		<d2l-breadcrumbs compact>
+			<template items="{{breadcrumbs}}" is="dom-repeat">
+				<d2l-breadcrumb href$="{{item.href}}" text="{{item.text}}"></d2l-breadcrumb>
+			</template>
+		</d2l-breadcrumbs>
+	</template>
+	<script>
+		Polymer({
+			is: 'd2l-demo-templated-compact-breadcrumbs',
+			attached: function() {
+				this.breadcrumbs = [
+					{href: '#', text: 'Compact Tempated Item 1'},
+					{href: '#', text: 'Compact Tempated Item 2'},
+					{href: '#', text: 'Compact Tempated Item 3'}
+				];
+			}
+		});
+	</script>
+</dom-module>

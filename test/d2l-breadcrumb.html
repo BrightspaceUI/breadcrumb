@@ -26,7 +26,7 @@
 			function setItemVariables() {
 				itemShadowRoot = item.shadowRoot;
 				text = itemShadowRoot.querySelector('d2l-link').innerHTML;
-				chevronIcons = itemShadowRoot.querySelectorAll('d2l-icon:not([hidden])');
+				chevronIcons = itemShadowRoot.querySelectorAll('iron-icon:not([hidden])');
 			}
 
 			describe('basic', () => {
@@ -41,7 +41,7 @@
 
 				it('should show right chevron icon', () => {
 					expect(chevronIcons.length).to.equal(1);
-					expect(chevronIcons[0].icon).to.equal('d2l-tier1:chevron-right');
+					expect(chevronIcons[0].icon).to.equal('d2l-breadcrumb:chevron-right');
 				});
 			});
 		});

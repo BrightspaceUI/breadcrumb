@@ -1,9 +1,10 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../d2l-colors/d2l-colors.html">
-<link rel="import" href="../d2l-icons/d2l-icon.html">
 <link rel="import" href="../d2l-link/d2l-link.html">
 <link rel="import" href="../d2l-icons/tier1-icons.html">
 <link rel="import" href="../d2l-polymer-behaviors/d2l-dom.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="./d2l-breadcrumb-icons.html">
 
 <dom-module id="d2l-breadcrumb">
 	<template strip-whitespace>
@@ -34,14 +35,22 @@
         		flex-direction: row-reverse;
 			}
 
-			d2l-icon {
-				height: 10px;
+			iron-icon {
+				--iron-icon-height: 8px;
+    			--iron-icon-width: 8px;
+				--iron-icon-fill-color: rgb(86, 90, 92);
+				padding-left: 10px;
+				padding-right: 5px;
+			}
+			div.d2l-breadcrumb-wrapper.compact iron-icon {
+				padding-right: 10px;
+				padding-left: 0;
 			}
 
 		</style>
 		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
-			<d2l-icon icon="[[_toggle(_compact, _compactIcon, _regularIcon)]]"></d2l-icon>
+			<iron-icon icon="[[_toggle(_compact, _compactIcon, _regularIcon)]]"></iron-icon>
 		</div>
 	</template>
 
@@ -72,11 +81,11 @@
 				},
 				_compactIcon: {
 					type: String,
-					value: 'd2l-tier1:chevron-left'
+					value: 'd2l-breadcrumb:chevron-left'
 				},
 				_regularIcon: {
 					type: String,
-					value: 'd2l-tier1:chevron-right'
+					value: 'd2l-breadcrumb:chevron-right'
 				}
 			},
 			attached: function() {
