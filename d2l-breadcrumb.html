@@ -88,15 +88,7 @@
 				},
 				_breadcrumbIcon: {
 					type: String,
-					computed: '_computeIcon(_compact, _compactIcon, _regularIcon)'
-				},
-				_compactIcon: {
-					type: String,
-					value: 'd2l-breadcrumb:chevron-left'
-				},
-				_regularIcon: {
-					type: String,
-					value: 'd2l-breadcrumb:chevron-right'
+					computed: '_computeIcon(_compact)'
 				}
 			},
 			attached: function() {
@@ -106,7 +98,7 @@
 					this._compact = this._getCompactProperty();
 				});
 			},
-			_computeIcon: function(compact, compactIcon, regularIcon) { return compact ? compactIcon : regularIcon; },
+			_computeIcon: function(compact) { return compact ? 'd2l-breadcrumb:chevron-left' : 'd2l-breadcrumb:chevron-right'; },
 			_getConditionalClasses: function(compact) {
 				var classes = ['d2l-breadcrumb-wrapper'];
 				if (compact) { classes.push('compact'); }
