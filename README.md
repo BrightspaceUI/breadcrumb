@@ -37,13 +37,7 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loa
 </d2l-breadcrumbs>
 ```
 
-```html
-<d2l-breadcrumbs compact>
-	<d2l-breadcrumb href="#" text="Breadcrumb item 1"></d2l-breadcrumb>
-	<d2l-breadcrumb href="#" text="Breadcrumb item 2"></d2l-breadcrumb>
-	...
-</d2l-breadcrumbs>
-```
+The `compact` parameter can be used to display the last breadcrumb only.
 
 ## Developing, Testing and Contributing
 
