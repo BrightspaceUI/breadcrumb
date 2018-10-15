@@ -57,7 +57,7 @@
 		</style>
 		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
-			<iron-icon icon="[[_toggle(_compact, _compactIcon, _regularIcon)]]"></iron-icon>
+			<iron-icon icon="[[_breadcrumbIcon]]"></iron-icon>
 		</div>
 	</template>
 
@@ -86,6 +86,10 @@
 					type: Boolean,
 					value: false
 				},
+				_breadcrumbIcon: {
+					type: String,
+					computed: '_computeIcon(_compact, _compactIcon, _regularIcon)'
+				},
 				_compactIcon: {
 					type: String,
 					value: 'd2l-breadcrumb:chevron-left'
@@ -102,7 +106,7 @@
 					this._compact = this._getCompactProperty();
 				});
 			},
-			_toggle: function(cond, t, f) { return cond ? t : f; },
+			_computeIcon: function(compact, compactIcon, regularIcon) { return compact ? compactIcon : regularIcon; },
 			_getConditionalClasses: function(compact) {
 				var classes = ['d2l-breadcrumb-wrapper'];
 				if (compact) { classes.push('compact'); }
