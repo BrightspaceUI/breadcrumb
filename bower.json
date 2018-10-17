@@ -1,0 +1,35 @@
+{
+  "name": "d2l-breadcrumbs",
+  "description": "Polymer-based web component for D2L breadcrumbs and related components",
+  "main": "d2l-breadcrumbs.html",
+  "license": "Apache-2.0",
+  "ignore": [
+    "demo",
+    "test",
+    ".editorconfig",
+    ".eslintrc.json",
+    ".gitignore",
+    ".travis.yml",
+    "CODEOWNERS",
+    "package.json",
+    "polymer.json",
+    "wct.conf.json"
+  ],
+  "dependencies": {
+    "d2l-colors": "^3.1.2",
+    "d2l-icons": "^5.0.2",
+    "d2l-link": "^4.0.0",
+    "polymer": "1.9 - 2"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "iron-iconset-svg": "^2.1.0",
+    "iron-icon": "^2.1.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^3.0.1"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+	<title>d2l-breadcrumb test</title>
+	<script src="../../webcomponentsjs/webcomponents-light.js"></script>
+	<script src="../../web-component-tester/browser.js"></script>
+	<link rel="import" href="../d2l-breadcrumb.html">
+</head>
+
+<body>
+	<test-fixture id="basic">
+		<template>
+			<d2l-breadcrumb href="#" text="basic-item"></d2l-breadcrumb>
+		</template>
+	</test-fixture>
+	<script>
+		describe('<d2l-breadcrumb>', () => {
+			let item;
+			let itemShadowRoot;
+			let text;
+			let chevronIcons;
+
+			function setItemVariables() {
+				itemShadowRoot = item.shadowRoot;
+				text = itemShadowRoot.querySelector('d2l-link').innerHTML;
+				chevronIcons = itemShadowRoot.querySelectorAll('iron-icon:not([hidden])');
+			}
+
+			describe('basic', () => {
+				beforeEach(() => {
+					item = fixture('basic');
+					setItemVariables();
+				});
+
+				it('should pass text parameter correctly', () => {
+					expect(text).to.equal('basic-item');
+				});
+
+				it('should show right chevron icon', () => {
+					expect(chevronIcons.length).to.equal(1);
+					expect(chevronIcons[0].icon).to.equal('d2l-breadcrumb:chevron-right');
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
