@@ -10,29 +10,17 @@
 	<template strip-whitespace>
 		<style>
 			:host {
-				-webkit-box-align: center;
-				-ms-flex-align: center;
 				align-items: center;
-				display: -webkit-inline-box;
-				display: -ms-inline-flexbox;
 				display: inline-flex;
 			}
 
 			div.d2l-breadcrumb-wrapper {
-				-webkit-box-align: center;
-				-ms-flex-align: center;
 				align-items: center;
 			}
 
 			div.d2l-breadcrumb-wrapper.compact {
-				display: -webkit-flex;
-				display: -webkit-box;
-				display: -ms-flexbox;
 				display: flex;
-				-webkit-box-orient: horizontal;
-				-webkit-box-direction: reverse;
-				-ms-flex-direction: row-reverse;
-        		flex-direction: row-reverse;
+				flex-direction: row-reverse;
 			}
 
 			iron-icon {
@@ -51,7 +39,7 @@
 				padding-left: 0;
 			}
 			div.d2l-breadcrumb-wrapper.compact iron-icon:dir(rtl) {
-				padding-right: 0px;
+				padding-right: 0;
 				padding-left: 10px;
 			}
 		</style>
