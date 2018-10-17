@@ -29,15 +29,44 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loa
 
 `d2l-breadcrumbs` wraps a list of items, and provides spacing between the items.
 
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="./d2l-breadcrumbs.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
 <d2l-breadcrumbs>
-	<d2l-breadcrumb href="#" text="Breadcrumb item 1"></d2l-breadcrumb>
-	<d2l-breadcrumb href="#" text="Breadcrumb item 2"></d2l-breadcrumb>
-	...
+	<d2l-breadcrumb text="Item 1" href="#"></d2l-breadcrumb>
+	<d2l-breadcrumb text="Item 2" href="#"></d2l-breadcrumb>
+	<d2l-breadcrumb text="Item 3" href="#"></d2l-breadcrumb>
 </d2l-breadcrumbs>
 ```
 
 The `compact` parameter can be used to display the last breadcrumb only.
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="./d2l-breadcrumbs.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<d2l-breadcrumbs compact>
+	<d2l-breadcrumb text="Compact Item 1" href="#"></d2l-breadcrumb>
+	<d2l-breadcrumb text="Compact Item 2" href="#"></d2l-breadcrumb>
+	<d2l-breadcrumb text="Compact Item 3" href="#"></d2l-breadcrumb>
+</d2l-breadcrumbs>
+```
 
 ## Developing, Testing and Contributing
 
