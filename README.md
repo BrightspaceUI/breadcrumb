@@ -33,8 +33,8 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loa
 ```
 <custom-element-demo>
 	<template>
-		<script src="../webcomponentsjs/webcomponents-lite.js"></script>
-		<link rel="import" href="./d2l-breadcrumbs.html">
+		<script src="../webcomponentsjs/webcomponents-loader.js"></script>
+		<link rel="import" href="d2l-breadcrumbs.html">
 		<next-code-block></next-code-block>
 	</template>
 </custom-element-demo>
@@ -53,8 +53,8 @@ The `compact` parameter can be used to display the last breadcrumb only.
 ```
 <custom-element-demo>
 	<template>
-		<script src="../webcomponentsjs/webcomponents-lite.js"></script>
-		<link rel="import" href="./d2l-breadcrumbs.html">
+		<script src="../webcomponentsjs/webcomponents-loader.js"></script>
+		<link rel="import" href="d2l-breadcrumbs.html">
 		<next-code-block></next-code-block>
 	</template>
 </custom-element-demo>
