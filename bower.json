@@ -16,10 +16,9 @@
     "wct.conf.json"
   ],
   "dependencies": {
-    "d2l-colors": "^3.1.2",
-    "d2l-icons": "^5.0.2",
-    "d2l-link": "^4.0.0",
-    "polymer": "1.9 - 2"
+    "polymer": "1.9 - 2",
+    "d2l-link": "^4.0.2",
+    "d2l-polymer-behaviors": "^1.8.1"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
