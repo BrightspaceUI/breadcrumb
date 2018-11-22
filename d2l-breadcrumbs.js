@@ -1,8 +1,10 @@
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="./d2l-breadcrumb.html">
+import '../@polymer/polymer/polymer-legacy.js';
+import './d2l-breadcrumb.js';
+import { Polymer } from '../@polymer/polymer/lib/legacy/polymer-fn.js';
+const $_documentContainer = document.createElement('template');
 
-<dom-module id="d2l-breadcrumbs">
-	<template strip-whitespace>
+$_documentContainer.innerHTML = `<dom-module id="d2l-breadcrumbs">
+	<template strip-whitespace="">
 		<style>
 			:host {
 				--d2l-breadcrumbs-background-color: rgb(251, 252, 252);
@@ -55,27 +57,28 @@
 		</div>
 	</template>
 
-	<script>
-		Polymer({
-			is: 'd2l-breadcrumbs',
-			properties: {
+	
+</dom-module>`;
 
-				/**
-				* Whether in `1 level` mode
-				*/
-				compact: {
-					type: Boolean,
-					value: false
-				}
-			},
-			attached: function() {
-				this._ensureAttribute('role', 'list');
-			},
-			_getConditionalClasses: function(compact) {
-				var classes = ['d2l-breadcrumbs-wrapper'];
-				if (compact) { classes.push('compact'); }
-				return classes.join(' ');
-			}
-		});
-	</script>
-</dom-module>
+document.head.appendChild($_documentContainer.content);
+Polymer({
+	is: 'd2l-breadcrumbs',
+	properties: {
+
+		/**
+		* Whether in `1 level` mode
+		*/
+		compact: {
+			type: Boolean,
+			value: false
+		}
+	},
+	attached: function() {
+		this._ensureAttribute('role', 'list');
+	},
+	_getConditionalClasses: function(compact) {
+		var classes = ['d2l-breadcrumbs-wrapper'];
+		if (compact) { classes.push('compact'); }
+		return classes.join(' ');
+	}
+});
