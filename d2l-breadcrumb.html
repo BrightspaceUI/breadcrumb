@@ -82,7 +82,7 @@
 				this._compact = this._getCompactProperty();
 				Polymer.RenderStatus.afterNextRender(this, function() {
 					this._compact = this._getCompactProperty();
-				});
+				}.bind(this));
 			},
 			_computeIcon: function(compact) { return compact ? 'd2l-breadcrumb:chevron-left' : 'd2l-breadcrumb:chevron-right'; },
 			_getConditionalClasses: function(compact) {
