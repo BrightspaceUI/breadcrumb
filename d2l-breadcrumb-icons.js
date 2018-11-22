@@ -1,7 +1,8 @@
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="../iron-iconset-svg/iron-iconset-svg.html"/>
+import '../@polymer/polymer/polymer-legacy.js';
+import '../@polymer/iron-iconset-svg/iron-iconset-svg.js';
+const $_documentContainer = document.createElement('template');
 
-<iron-iconset-svg name="d2l-breadcrumb" size="10" rtl-mirroring="true">
+$_documentContainer.innerHTML = `<iron-iconset-svg name="d2l-breadcrumb" size="10" rtl-mirroring="true">
 	<svg>
 		<defs>
 			<g id="chevron-right" mirror-in-rtl="true" fill-rule="nonzero">
@@ -12,4 +13,6 @@
 			</g>
 		</defs>
 	</svg>
-</iron-iconset-svg>
+</iron-iconset-svg>`;
+
+document.head.appendChild($_documentContainer.content);
