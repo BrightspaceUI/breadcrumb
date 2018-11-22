@@ -2,7 +2,7 @@
 <link rel="import" href="../d2l-breadcrumbs.html">
 
 <dom-module id="d2l-demo-templated-breadcrumbs">
-	<template>
+	<template strip-whitespace>
 		<d2l-breadcrumbs>
 			<template items="{{breadcrumbs}}" is="dom-repeat">
 				<d2l-breadcrumb href$="{{item.href}}" text="{{item.text}}"></d2l-breadcrumb>
@@ -25,7 +25,7 @@
 </dom-module>
 
 <dom-module id="d2l-demo-templated-compact-breadcrumbs">
-	<template>
+	<template strip-whitespace>
 		<d2l-breadcrumbs compact>
 			<template items="{{breadcrumbs}}" is="dom-repeat">
 				<d2l-breadcrumb href$="{{item.href}}" text="{{item.text}}"></d2l-breadcrumb>
