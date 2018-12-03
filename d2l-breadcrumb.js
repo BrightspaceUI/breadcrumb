@@ -1,10 +1,10 @@
-import '../@polymer/polymer/polymer-legacy.js';
-import '../d2l-link/d2l-link.js';
-import '../d2l-polymer-behaviors/d2l-dom.js';
-import '../@polymer/iron-icon/iron-icon.js';
+import '@polymer/polymer/polymer-legacy.js';
+import 'd2l-link/d2l-link.js';
+import 'd2l-polymer-behaviors/d2l-dom.js';
+import '@polymer/iron-icon/iron-icon.js';
 import './d2l-breadcrumb-icons.js';
-import { Polymer } from '../@polymer/polymer/lib/legacy/polymer-fn.js';
-import { afterNextRender } from '../@polymer/polymer/lib/utils/render-status.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 const $_documentContainer = document.createElement('template');
 
 $_documentContainer.innerHTML = `<dom-module id="d2l-breadcrumb">
