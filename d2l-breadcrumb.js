@@ -1,8 +1,8 @@
 import '@polymer/polymer/polymer-legacy.js';
+import 'd2l-icons/d2l-icon.js';
+import 'd2l-icons/tier1-icons.js';
 import 'd2l-link/d2l-link.js';
 import 'd2l-polymer-behaviors/d2l-dom.js';
-import '@polymer/iron-icon/iron-icon.js';
-import './d2l-breadcrumb-icons.js';
 import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 const $_documentContainer = document.createElement('template');
@@ -24,33 +24,32 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-breadcrumb">
 				flex-direction: row-reverse;
 			}
 
-			iron-icon {
-				--iron-icon-height: 8px;
-				--iron-icon-width: 8px;
-				--iron-icon-fill-color: rgb(86, 90, 92);
+			d2l-icon {
+				height: 8px;
 				padding-left: 10px;
 				padding-right: 5px;
+				width: 8px;
 			}
-			iron-icon:dir(rtl) {
+			d2l-icon:dir(rtl) {
 				padding-left: 5px;
 				padding-right: 10px;
 			}
-			div.d2l-breadcrumb-wrapper.compact iron-icon {
+			div.d2l-breadcrumb-wrapper.compact d2l-icon {
 				padding-right: 10px;
 				padding-left: 0;
 			}
-			div.d2l-breadcrumb-wrapper.compact iron-icon:dir(rtl) {
+			div.d2l-breadcrumb-wrapper.compact d2l-icon:dir(rtl) {
 				padding-right: 0;
 				padding-left: 10px;
 			}
 		</style>
 		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
-			<iron-icon icon="[[_breadcrumbIcon]]"></iron-icon>
+			<d2l-icon icon="[[_breadcrumbIcon]]"></d2l-icon>
 		</div>
 	</template>
 
-	
+
 </dom-module>`;
 
 document.head.appendChild($_documentContainer.content);
@@ -90,7 +89,7 @@ Polymer({
 			this._compact = this._getCompactProperty();
 		}.bind(this));
 	},
-	_computeIcon: function(compact) { return compact ? 'd2l-breadcrumb:chevron-left' : 'd2l-breadcrumb:chevron-right'; },
+	_computeIcon: function(compact) { return compact ? 'd2l-tier1:chevron-left' : 'd2l-tier1:chevron-right'; },
 	_getConditionalClasses: function(compact) {
 		var classes = ['d2l-breadcrumb-wrapper'];
 		if (compact) { classes.push('compact'); }
