@@ -43,7 +43,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-breadcrumb">
 				padding-left: 10px;
 			}
 		</style>
-		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[text]]">
+		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[_getAriaLabel(text, ariaLabel)]]">
 			<d2l-link href$="[[href]]">[[text]]</d2l-link>
 			<d2l-icon icon="[[_breadcrumbIcon]]"></d2l-icon>
 		</div>
@@ -69,6 +69,13 @@ Polymer({
 		text: {
 			type: String,
 			value: ''
+		},
+		/**
+		* Aria Label (optional)
+		*/
+		ariaLabel: {
+			type: String,
+			value: null
 		},
 		/**
 		* Whether in compact mode
@@ -105,5 +112,8 @@ Polymer({
 			return true;
 		});
 		return compact;
+	},
+	_getAriaLabel: function(text, ariaLabel) {
+		return ariaLabel ? ariaLabel : text;
 	}
 });
