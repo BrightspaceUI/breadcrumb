@@ -104,8 +104,8 @@ npm test
 
 [bower-url]: http://bower.io/search/?q=d2l-breadcrumbs
 [bower-image]: https://badge.fury.io/bo/d2l-breadcrumbs.svg
-[ci-url]: https://travis-ci.org/BrightspaceUI/breadcrumbs
-[ci-image]: https://travis-ci.org/BrightspaceUI/breadcrumbs.svg?branch=master
+[ci-url]: https://travis-ci.com/BrightspaceUI/breadcrumbs
+[ci-image]: https://travis-ci.com/BrightspaceUI/breadcrumbs.svg?branch=master
 [design.d2l-url]: http://design.d2l/components/breadcrumbs/
 
 ## Versioning & Releasing
