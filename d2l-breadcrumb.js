@@ -44,7 +44,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-breadcrumb">
 			}
 		</style>
 		<div class$="[[_getConditionalClasses(_compact)]]" role="navigation" aria-label$="[[_getAriaLabel(text, ariaLabel)]]">
-			<d2l-link href$="[[href]]">[[text]]</d2l-link>
+			<d2l-link href$="[[href]]" target="[[target]]">[[text]]</d2l-link>
 			<d2l-icon icon="[[_breadcrumbIcon]]"></d2l-icon>
 		</div>
 	</template>
@@ -62,6 +62,12 @@ Polymer({
 		href: {
 			type: String,
 			value: '#'
+		},
+		/**
+		* Item target (optional)
+		*/
+		target: {
+			type: String
 		},
 		/**
 		* Item text
