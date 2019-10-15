@@ -67,8 +67,7 @@ Polymer({
 		* Item target (optional)
 		*/
 		target: {
-			type: String,
-			value: '_self'
+			type: String
 		},
 		/**
 		* Item text
