@@ -1,123 +1,81 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
-	<title>d2l-breadcrumbs demo</title>
-
-	<script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-	<script type="module" src="../../@polymer/polymer/polymer-legacy.js"></script>
-
-	<script type="module" src="../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
-	<script type="module" src="../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
-	<script type="module" src="../d2l-breadcrumbs.js"></script>
-	<script type="module" src="./demo-components.js"></script>
-
-	<!-- FIXME(polymer-modulizer):
-		These imperative modules that innerHTML your HTML are
-		a hacky way to be sure that any mixins in included style
-		modules are ready before any elements that reference them are
-		instantiated, otherwise the CSS @apply mixin polyfill won't be
-		able to expand the underlying CSS custom properties.
-		See: https://github.com/Polymer/polymer-modulizer/issues/154
-		-->
-	<script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<custom-style>
-		<style is="custom-style" include="demo-pages-shared-styles">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+		<script type="module">
+			import '@brightspace-ui/core/components/demo/demo-page.js';
+			import '@brightspace-ui/core/components/demo/demo-snippet.js';
+			import './demo-components.js';
+			import '../d2l-breadcrumbs.js';
+		</script>
+		<style>
+			html {
+				font-size: 20px;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			body[unresolved] {
+				opacity: 0;
+			}
 		</style>
-	</custom-style>`;
+	</head>
+	<body unresolved>
 
-document.body.appendChild($_documentContainer.content);
-</script>
-</head>
+		<d2l-demo-page page-title="d2l-breadcrumbs (imported from core)">
 
-<body>
-	<script type="module">
-const $_documentContainer = document.createElement('template');
+			<h2>Basic d2l-breadcrumbs demo</h2>
+			<d2l-demo-snippet>
+				<template>
+					<d2l-breadcrumbs>
+						<d2l-breadcrumb href="#" text="Basic Item 1"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Basic Item 2"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Basic Item 3" aria-label="Aria for Item 3"></d2l-breadcrumb>
+					</d2l-breadcrumbs>
+				</template>
+			</d2l-demo-snippet>
 
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
-		<h3>Basic d2l-breadcrumbs demo</h3>
-		<demo-snippet>
-			<template>
-				<d2l-breadcrumbs>
-					<d2l-breadcrumb href="#" text="Basic Item 1"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Basic Item 2"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Basic Item 3" aria-label="Aria for Item 3"></d2l-breadcrumb>
-				</d2l-breadcrumbs>
-			</template>
-		</demo-snippet>
-	</div>`;
+			<h2>Basic Overflow d2l-breadcrumbs demo</h2>
+			<d2l-demo-snippet>
+				<template>
+					<d2l-breadcrumbs style="max-width: 200px;">
+						<d2l-breadcrumb href="#" text="Truncate Basic Item 1"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Truncate Basic Item 2"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Truncate Basic Item 3"></d2l-breadcrumb>
+					</d2l-breadcrumbs>
+				</template>
+			</d2l-demo-snippet>
+		
+			<h2>Compact d2l-breadcrumbs demo</h2>
+			<d2l-demo-snippet>
+				<template>
+					<d2l-breadcrumbs compact="">
+						<d2l-breadcrumb href="#" text="Compact Item 1"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Compact Item 2"></d2l-breadcrumb>
+						<d2l-breadcrumb href="#" text="Compact Item 3"></d2l-breadcrumb>
+					</d2l-breadcrumbs>
+				</template>
+			</d2l-demo-snippet>
+		
+			<h2>Templated d2l-breadcrumbs demo</h2>
+			<d2l-demo-snippet>
+				<template>
+					<d2l-demo-templated-breadcrumbs></d2l-demo-templated-breadcrumbs>
+				</template>
+			</d2l-demo-snippet>
+		
+			<h2>Templated compact d2l-breadcrumbs demo</h2>
+			<d2l-demo-snippet>
+				<template>
+					<d2l-demo-templated-compact-breadcrumbs></d2l-demo-templated-compact-breadcrumbs>
+				</template>
+			</d2l-demo-snippet>
 
-document.body.appendChild($_documentContainer.content);
-</script>
-	<script type="module">
-const $_documentContainer = document.createElement('template');
+		</d2l-demo-page>
 
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
-		<h3>Basic Overflow d2l-breadcrumbs demo</h3>
-		<demo-snippet>
-			<template>
-				<d2l-breadcrumbs style="max-width: 200px;">
-					<d2l-breadcrumb href="#" text="Truncate Basic Item 1"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Truncate Basic Item 2"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Truncate Basic Item 3"></d2l-breadcrumb>
-				</d2l-breadcrumbs>
-			</template>
-		</demo-snippet>
-	</div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
-	<script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
-		<h3>Compact d2l-breadcrumbs demo</h3>
-		<demo-snippet>
-			<template>
-				<d2l-breadcrumbs compact="">
-					<d2l-breadcrumb href="#" text="Compact Item 1"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Compact Item 2"></d2l-breadcrumb>
-					<d2l-breadcrumb href="#" text="Compact Item 3"></d2l-breadcrumb>
-				</d2l-breadcrumbs>
-			</template>
-		</demo-snippet>
-	</div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
-	<script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
-		<h3>Templated d2l-breadcrumbs demo</h3>
-		<demo-snippet>
-			<template>
-				<d2l-demo-templated-breadcrumbs></d2l-demo-templated-breadcrumbs>
-			</template>
-		</demo-snippet>
-	</div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
-	<script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
-		<h3>Templated compact d2l-breadcrumbs demo</h3>
-		<demo-snippet>
-			<template>
-				<d2l-demo-templated-compact-breadcrumbs></d2l-demo-templated-compact-breadcrumbs>
-			</template>
-		</demo-snippet>
-	</div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
-</body>
+	</body>
 
 </html>

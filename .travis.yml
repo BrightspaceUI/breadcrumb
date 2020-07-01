@@ -1,29 +1,2 @@
 language: node_js
 node_js: node
-addons:
-  chrome: stable
-script:
-- npm run lint
-- |
-  if [ $TRAVIS_PULL_REQUEST != false ] && [ $TRAVIS_SECURE_ENV_VARS == true ]; then
-    echo "Pull request with secure environment variables, running Sauce tests...";
-    npm run test:polymer:sauce || travis_terminate 1;
-  else
-    echo "Not a pull request and/or no secure environment variables, running headless tests...";
-    npm run test:polymer:local || travis_terminate 1;
-  fi
-after_success:
-- frauci-update-version -d=skip && export TRAVIS_TAG=$(frauci-get-version)
-deploy:
-  provider: releases
-  api_key: "$GITHUB_RELEASE_TOKEN"
-  on:
-    tags: true
-env:
-  global:
-  - OWNER_NAME=BrightspaceUI
-  - REPO_NAME=breadcrumbs
-  - SAUCE_USERNAME: Desire2Learn
-  - secure: OiidKmIpj282i+p+oNkbGEqITqDROdzdTndQAFlJWwl6tCq3FGVrxDEWZvYl3njlRoy6lN7x/85znYykMJxAXGVxrGf1Pxi5zXsIF5vfSXPKNkEZbtvh0NGPIPep3lNh/Z9+qbCaQXssrnqs1wRyL2Z6hGbiKAMf+uUmM7bRSOhxvkYmh1I0Ttpvm2PL3KEopCQbxt49ehV7rV82+Zy6IVpR6J4TosZbIPDUEs+lIfzGSwttnb+EJ4LJBwSvbXVpvoShcHAQvLNv1vV30eKxqeJKKsEhc84z8z0r5oZW2nPFOSU0H7SGTWlMbKGMciG6FhaY+GYKWJ3QxBJLobcWWsKAAaWoyI0JVOuD3yiRjpew5KNXjtmsJNyO1cSdFreJndaXqY43thFOfLK67VF6mA7gW0jyOMNOtmsaCYYuU6PdakoW9WIYrT62/f1aCtp/4iNLx4ex4sXdYQPMERTOvdbVeNqNLGH1CQvD1TYDeUbrV5NRmPgU8FJocDdspo8Iey43tNRB5MDBASE2yA+a0Y48BWT6sY2pecl/b+qumCkC+3htt2+RA/I3Aw0F4NFRvlmcnXS/uZ8yqCYj1CaWXuCionUvYDniH2+I19TiDLLsH8uP20Ysgn4ewiDcBxLuycmn7v0CvSJ0zamdcAf/uOEZlL8fOKdjF3pgoWYCw2Y=
-  # SAUCE_ACCESS_KEY
-  - secure: k0DPXKBa8IAayYFXD0OzyTQp8orefGl9rCmIxRvWvowDRDSLrO14BIBUjjlFLA/adQufWeWOUmooQO0lCON31PvrlcOnkviKIKBhPLat8GR0WFn1M5Dw8iR+ZEzNt7w2j/j4Hstd1bPAT5epCB0Ze5fhSbrO2xE3LtWD6rVQ55n35nBwJmXARJSxsJOzL0ncMN74rbFdy/qXQQF6qwP2t9dvDllnNZkRo+A/aHJ+niFNgSzY187VYPFR+yLGwhy/2Ivjn2l9aNTIcogp11hz9fzJ/T+Q33vBcp05AgSlFvnYfbC+jztTxkeDjIDeJznwfDO9EtrKWVZb0a726pHd2Y89XVMuKY7/2Hgm+c4yw8e8lkQCW0l936L5IMjtEG/09MuePuY+MUuV9wq8flNthph80Jm2xib63edLcpkGZ7r484XDKif6advEJOZIEgaurq7rkoeV9A7K0RTeEvWj6K+U5NjD1nwNBxnQ9TnW9DGWpxrTYXDipb/aTitHyrj6tQRZePDJ2KuEXzP5t4u2KKVkLs1OobnEbFLEqtmeF/Roi1Bre+kg1L9drKwCzJkD+Scx7daNKpszyI/XoYKVO8DAzJkUs77dVGXv3mnmYAphCDpejvjwLHoHn1En8n5/AGhIbF7lF7IS/4MytD/PSUTsPDSu2miGNmNpxwOzxpw=
