@@ -1,9 +1,3 @@
 {
-  "extends": "brightspace/polymer-3-config",
-  "env": {
-    "es6": true
-  },
-  "globals": {
-    "localize": true
-  }
+  "extends": "brightspace/polymer-3-config"
 }
